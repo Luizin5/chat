@@ -1,0 +1,39 @@
+
+  <input id = "text" placeholder="Digite aqui sua mensagem...">
+  <button onclick="enviar()">Enviar</button>
+
+<ul id="msgs">
+</ul>
+
+<script>
+    const ul = document.getElementById("msgs")
+    const btn = document.getElementById("enviar")
+    const ws = new WebSocket("ws://0.0.0.0:1200") 
+
+    ws.onmessage = (msg) => {
+      add(msg.data)
+    }
+    ws.onopen = function(e){ alert("blz")}
+
+
+
+    add = (txt) =>{ 
+     /*li = document.createElement("li")
+     li.appendChild(document.createTextNode(txt))
+     ul.appendChild(li)*/
+
+      li = document.createElement("li")
+      li.appendChild(document.createTextNode(txt))
+      ul.appendChild(li)
+    }
+  
+    function enviar(){
+   
+      text = document.getElementById("text")
+      name = "<%=name%>"
+      ws.send(name+" : "+text.value)
+    //alert(text.value)
+    }
+  
+
+</script>

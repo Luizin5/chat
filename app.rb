@@ -1,10 +1,12 @@
 require "sinatra"
+#require "sinatra/cookies"
 
 module Chat 
   class App < Sinatra::Base
-    p :ok
-
+    #helpers Sinatra::Cookies
     enable :sessions
+
+    p :ok
 
     get "/" do
       redirect "/login"
@@ -23,3 +25,13 @@ module Chat
 end
 
 #Chat::App.new
+
+
+#############################
+  #####  #      #####  #####   
+  #      #      #   #    #  
+  #      #####  #####    #     
+  #      #   #  #   #    #     
+  #####  #   #  #   #    #     
+                             
+#############################

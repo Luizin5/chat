@@ -8,7 +8,7 @@
 <script>
     const ul = document.getElementById("msgs")
     const btn = document.getElementById("enviar")
-    const ws = new WebSocket("ws://0.0.0.0:1200") 
+    const ws = new WebSocket("ws://0.0.0.0:1200")
 
     ws.onmessage = (msg) => {
       add(msg.data)
@@ -21,9 +21,17 @@
      /*li = document.createElement("li")
      li.appendChild(document.createTextNode(txt))
      ul.appendChild(li)*/
-
+     
+      txt = txt.split("/color")
       li = document.createElement("li")
-      li.appendChild(document.createTextNode(txt))
+      li.appendChild(document.createTextNode(txt[0]))
+
+      color = ""
+      if(txt.lenght != 1) {
+        color = txt[txt.length-1].trim()
+      }
+      li.style.color = color
+
       ul.appendChild(li)
     }
   

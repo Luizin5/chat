@@ -33,7 +33,7 @@ module Chat
             @clients.each_with_index { |c| 
               msgs.each do |i|
                 #p i[:nick]
-                c.send("#{i[:nick]} : #{i[:msg]}") 
+                c.send("#{i[:nick]} : #{i[:msg]}".force_encoding('UTF-8')) 
                 #envia a mensagem para todos os clients
               end
             }
@@ -51,7 +51,7 @@ module Chat
             #############
             @db.exec("insert into messages values(\"#{nick}\",\"#{msg}\") ")
 
-            @clients.each { |client| client.send(nick+": "+msg) }
+            @clients.each { |client| client.send("#{nick}: #{msg}".force_encoding('UTF-8') ) }
             #envia a mensagem e o nick para todos os clients
 
           end

@@ -1,0 +1,42 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    em-websocket (0.5.3)
+      eventmachine (>= 0.12.9)
+      http_parser.rb (~> 0)
+    eventmachine (1.2.7)
+    extralite (1.17)
+    http_parser.rb (0.8.0)
+    multi_json (1.15.0)
+    mustermann (3.0.0)
+      ruby2_keywords (~> 0.0.1)
+    rack (2.2.4)
+    rack-protection (3.0.4)
+      rack
+    ruby2_keywords (0.0.5)
+    sinatra (3.0.4)
+      mustermann (~> 3.0)
+      rack (~> 2.2, >= 2.2.4)
+      rack-protection (= 3.0.4)
+      tilt (~> 2.0)
+    sinatra-contrib (3.0.4)
+      multi_json
+      mustermann (~> 3.0)
+      rack-protection (= 3.0.4)
+      sinatra (= 3.0.4)
+      tilt (~> 2.0)
+    tilt (2.0.11)
+    webrick (1.7.0)
+
+PLATFORMS
+  arm-linux-androideabi
+
+DEPENDENCIES
+  em-websocket (~> 0.5.3)
+  extralite (~> 1.16)
+  sinatra (~> 3.0)
+  sinatra-contrib (~> 3.0)
+  webrick (~> 1.7)
+
+BUNDLED WITH
+   2.3.7

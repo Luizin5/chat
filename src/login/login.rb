@@ -6,7 +6,7 @@ module Chat
     end
 
     post "/login" do
-      session["name"] = params[:name]
+      cookies[:name] = params[:name]
       redirect "/chat"
     end
 

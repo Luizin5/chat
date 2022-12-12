@@ -1,22 +1,23 @@
 require "sinatra"
-#require "sinatra/cookies"
+require "sinatra/cookies"
 
 module Chat 
   class App < Sinatra::Base
-    #helpers Sinatra::Cookies
-    enable :sessions
+    helpers Sinatra::Cookies
+    #enable :sessions
 
     p :ok
 
     get "/" do
-      redirect "/login"
+      redirect "/login" #if cookies[:name] == nil
+      #erb :main, :layout => :layout
     end
 
     get "/chat" do
-      erb :index, :layout => :layout, 
+      erb :index, :layout => :layout,
           :locals => {
             :teste => "ola mundo", 
-            :name => session["name"]
+            :name => cookies[:name]
           }
     end
 
